@@ -4,7 +4,7 @@ import pymysql
 
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+    return HttpResponse("Nothing")
 
 
 def main(request, name):
@@ -49,3 +49,11 @@ def connect(request, name, password):
         return HttpResponse("Error with connection")
 
     return HttpResponse(a)
+
+
+def email_resp(request, email):
+    return HttpResponse(f"Your email - {email}")
+
+
+def phone_resp(request, phone):
+    return HttpResponse(f"Your phone - {phone}")
