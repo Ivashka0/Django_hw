@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RRRR</title>
+</head>
+<body>
+    <div>
+        {% for element in questions|dictsort:"id" %}
+        <ol>
+            <li>{{ element.id|floatformat:1 }}</li>
+            <li>{{ element.author }}</li>
+            <li>{{ element.question_text|title|default:'nothing here' }}</li>
+            <li>{{ element.date }}</li>
+        </ol>
+        {% endfor %}
+    </div>
+</body>
+</html>

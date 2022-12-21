@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rrte</title>
+</head>
+<body>
+    <div>
+        {% for element in lets_do_it|dictsortreversed:"priority" %}
+        {{ forloop.counter }}
+        <ol>
+            <li>{{ element.priority }}</li>
+            <li>{{ element.task }}</li>
+        </ol>
+        {% endfor %}
+    </div>
+</body>
+</html>

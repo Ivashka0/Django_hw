@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fe</title>
+</head>
+<body>
+    <div>
+        {% for element in latest_question_list %}
+        <ol>
+            <li>
+                <a href="http://127.0.0.1:8000//polls/{{ element.id }}">
+                    {{ element.question_text|default:"Список вопросов пуст" }}</a>
+            </li>
+        </ol>
+        {% endfor %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fe</title>
+</head>
+<body>
+    <div>
+        {% for element in result %}
+        <ol>
+            <li>{{ element.id }}</li>
+            <li>{{ element.name }}</li>
+            <li>{{ element.password }}</li>
+        </ol>
+        {% endfor %}
+    </div>
+</body>
+</html>

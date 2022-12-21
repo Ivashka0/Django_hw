@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rrtfe</title>
+</head>
+<body>
+    <div>
+        {% for element in lets_do_it %}
+        {{ forloop.counter }}
+        <ol>
+            <li>{{ element.name }}{{ element.surname }}</li>
+        </ol>
+        {% endfor %}
+    </div>
+</body>
+</html>
