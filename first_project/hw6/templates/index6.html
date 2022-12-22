@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .all {
+            display: flex;
+            margin: 30px;
+        }
+        .variant {
+            width: 250px;
+            height: 600px;
+            border: 1px solid black;
+            box-shadow: 0px 6px 3px grey;
+            border-radius: 10px;
+            margin: 10px;
+        }
+        .variant:hover {
+            transition: 1s;
+            transform: scale(1.15);
+        }
+        h3 {
+            text-align: center;
+        }
+        .hr1 {
+            border:  2px solid red;
+        }
+        .h1 {
+            font-weight: bolder;
+            font-size: 30px;
+            text-align: center;
+        }
+        .grey {
+            font-weight: 600;
+            color: black;
+            text-align: center;
+            vertical-align: text-top;
+        }
+        .pp {
+            text-align: center;
+        }
+        .button_red {
+            margin-left: 50px;
+            margin-right: 50px;
+            text-align: center;
+            background-color: red;
+            border-radius: 5px;
+            height: 25px;
+            vertical-align: middle;
+            padding-top: 5px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="all">
+        {% for element in result %}
+        <div class="variant">
+            <h3>{{ element.name }}</h3>
+            <hr class="hr1">
+            <img src="{{ element.image }}" height="200px" width="250px">
+            <p class="grey">{{ element.author }}</p>
+            <p class="pp">Date:{{ element.date }}</p>
+            <p class="pp">Style:{{ element.style }}</p>
+            <p class="pp">Publisher:{{ element.publisher }}</p>
+            <p class="h1">{{ element.price}}$</p>
+            <p class="button_red">BUY</p>
+            <p class="grey">Available: {{ element.available }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
