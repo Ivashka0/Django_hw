@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div><! -- 1 -->
+        {% for element in wards_list %}
+            {{ element.name }}
+            {{ element.floor }}
+            {{ element.building }}
+        {% endfor %}
+    </div>
+    <div><! -- 2 -->
+        {% for element in doctors_list %}
+            {{ element.surname }}
+            {{ element.phone }}
+        {% endfor %}
+    </div>
+    <div><! -- 3 -->
+        {% for element in wards_list %}
+            {{ element.name }}
+            {{ element.floor }}
+        {% endfor %}
+    </div>
+    <div><! -- 4 -->
+        {% for element in diseases_list %}
+        <p>Имя: </p>{{ element.name }}
+        <p>Степень тяжести: </p>{{ element.severity }}
+        {% endfor %}
+    </div>
+    <div><! -- 6 -->
+        {% for element in departments_list %}
+            {% if element.financing < 30000 %}
+            {{ element.name }}
+            {{ element.financing }}
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div><! -- 7 -->
+        {% for element in departments_list %}
+            {% if element.financing < 15000 and element.financing > 12000 %}
+            {{ element.name }}
+            {{ element.financing }}
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div><! -- 8 -->
+        {% for element in wards_list %}
+            {% if element.building == 4 or element.building == 5 %}
+            <p>Здание: </p>{{ element.building }}
+            <p>Этаж: </p>{{ element.floor }}
+            <p>Кабинет: </p>{{ element.name }}
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div><! -- 9 -->
+        {% for element in departments_list %}
+            {% if element.building == 3 and element.financing > 11000 and element.financing < 25000 %}
+            {{ element.name }}
+            {{ element.financing }}
+            {{ element.building }}
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div><! -- 10 -->
+        {% for element in doctors_list %}
+            {% if element.salary > 1500 %}
+            {{ element.surname }}
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div><! -- 14 -->
+        {% for element in diseases_list %}
+            {% if element.severity > 2 %}
+            <p>Имя: </p>{{ element.name }}
+            <p>Степень тяжести: </p>{{ element.severity }}
+            {% endif %}
+        {% endfor %}
+    </div>
+</body>
+</html>
