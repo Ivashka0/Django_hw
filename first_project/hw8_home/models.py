@@ -1,5 +1,5 @@
 from django.db import models
-from django.core.validators import MaxValueValidator, MinValueValidator, RegexValidator
+from django.core.validators import MaxValueValidator, MinValueValidator, RegexValidator, ValidationError
 import datetime
 
 # Create your models here.
@@ -46,8 +46,12 @@ class DoctorsExamination(models.Model):
     examination_id = models.ForeignKey(Examination, on_delete=models.SET_NULL, null=True)
     ward_id = models.ForeignKey(Ward, on_delete=models.SET_NULL, null=True)
 
+    def clean(self):
+        if self.start_time > self.end_time:
+            raise ValidationError("Error")
+
     def __str__(self):
-        return f"DoctorID:{self.doctor_id} ExaminationID:{self.examination_id} WardID:{self.ward_id}"
+        return f"{self.doctor_id} {self.examination_id} {self.ward_id}"
 
 
 class Sponsor(models.Model):
@@ -64,5 +68,4 @@ class Donation(models.Model):
     sponsor_id = models.ForeignKey(Sponsor, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
-        return f"SponsorID:{self.sponsor_id} {self.amount}"
-
+        return f"{self.sponsor_id} {self.amount}"

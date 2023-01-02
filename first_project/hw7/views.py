@@ -4,7 +4,7 @@ from django.template import loader
 from django.views.generic import TemplateView
 import datetime
 import pymysql
-from hw7.models import Product, Departments, Diseases, Doctors, Examinations, Wards
+from hw7.models import Product
 
 
 def connect(request):
@@ -36,33 +36,3 @@ def product(request):
     context = Product.objects.all()
 
     return render(template_name='index7.html', request=request, context={"product_list": context})
-
-
-def wards_all(request):
-    context = Wards.objects.all()
-
-    return render(template_name='index7.html', request=request, context={"wards_list": context})
-
-
-def departments_all(request):
-    context = Departments.objects.all()
-
-    return render(template_name='index7.html', request=request, context={"departments_list": context})
-
-
-def examinations_all(request):
-    context = Examinations.objects.all()
-
-    return render(template_name='index7.html', request=request, context={"examinations_list": context})
-
-
-def doctors_all(request):
-    context = Doctors.objects.all()
-
-    return render(template_name='index7.html', request=request, context={"doctors_list": context})
-
-
-def diseases_all(request):
-    context = Diseases.objects.all()
-
-    return render(template_name='index7.html', request=request, context={"diseases_list": context})

@@ -3,80 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .all {
+            display: flex;
+            margin: 30px;
+        }
+        .variant {
+            width: 250px;
+            height: <parent></parent>;
+            border: 1px solid black;
+            box-shadow: 0px 6px 3px grey;
+            border-radius: 10px;
+            margin: 10px;
+        }
+        .variant:hover {
+            transition: 1s;
+            transform: scale(1.15);
+        }
+        h3 {
+            text-align: center;
+        }
+        .hr1 {
+            border:  2px solid red;
+        }
+        .h1 {
+            font-weight: bolder;
+            font-size: 30px;
+            text-align: center;
+        }
+        .grey {
+            font-weight: 600;
+            color: black;
+            text-align: center;
+            vertical-align: text-top;
+        }
+        .pp {
+            text-align: center;
+        }
+        .button_red {
+            margin-left: 50px;
+            margin-right: 50px;
+            text-align: center;
+            background-color: red;
+            border-radius: 5px;
+            height: 25px;
+            vertical-align: middle;
+            padding-top: 5px;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-    <div><! -- 1 -->
-        {% for element in wards_list %}
-            {{ element.name }}
-            {{ element.floor }}
-            {{ element.building }}
+    <div class="all">
+        {% for element in products_list %}
+        <div class="variant">
+            <h3>{{ element.name }}</h3>
+            <hr class="hr1">
+            <img src="data:images/png;base64,{{ element.image_base64 }}" height="200px" width="250px">
+            <p class="grey">Description:{{ element.description }}</p>
+            <p class="h1">{{ element.price }}$</p>
+            <p class="button_red">BUY</p>
+        </div>
         {% endfor %}
     </div>
-    <div><! -- 2 -->
-        {% for element in doctors_list %}
-            {{ element.surname }}
-            {{ element.phone }}
-        {% endfor %}
-    </div>
-    <div><! -- 3 -->
-        {% for element in wards_list %}
-            {{ element.name }}
-            {{ element.floor }}
-        {% endfor %}
-    </div>
-    <div><! -- 4 -->
-        {% for element in diseases_list %}
-        <p>Имя: </p>{{ element.name }}
-        <p>Степень тяжести: </p>{{ element.severity }}
-        {% endfor %}
-    </div>
-    <div><! -- 6 -->
-        {% for element in departments_list %}
-            {% if element.financing < 30000 %}
-            {{ element.name }}
-            {{ element.financing }}
-            {% endif %}
-        {% endfor %}
-    </div>
-    <div><! -- 7 -->
-        {% for element in departments_list %}
-            {% if element.financing < 15000 and element.financing > 12000 %}
-            {{ element.name }}
-            {{ element.financing }}
-            {% endif %}
-        {% endfor %}
-    </div>
-    <div><! -- 8 -->
-        {% for element in wards_list %}
-            {% if element.building == 4 or element.building == 5 %}
-            <p>Здание: </p>{{ element.building }}
-            <p>Этаж: </p>{{ element.floor }}
-            <p>Кабинет: </p>{{ element.name }}
-            {% endif %}
-        {% endfor %}
-    </div>
-    <div><! -- 9 -->
-        {% for element in departments_list %}
-            {% if element.building == 3 and element.financing > 11000 and element.financing < 25000 %}
-            {{ element.name }}
-            {{ element.financing }}
-            {{ element.building }}
-            {% endif %}
-        {% endfor %}
-    </div>
-    <div><! -- 10 -->
-        {% for element in doctors_list %}
-            {% if element.salary > 1500 %}
-            {{ element.surname }}
-            {% endif %}
-        {% endfor %}
-    </div>
-    <div><! -- 14 -->
-        {% for element in diseases_list %}
-            {% if element.severity > 2 %}
-            <p>Имя: </p>{{ element.name }}
-            <p>Степень тяжести: </p>{{ element.severity }}
-            {% endif %}
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .all {
+            display: flex;
+            margin: 30px;
+        }
+        .variant {
+            width: 250px;
+            height: <parent></parent>;
+            border: 1px solid black;
+            box-shadow: 0px 6px 3px grey;
+            border-radius: 10px;
+            margin: 10px;
+        }
+        .variant:hover {
+            transition: 1s;
+            transform: scale(1.15);
+        }
+        h3 {
+            text-align: center;
+        }
+        .hr1 {
+            border:  2px solid red;
+        }
+        .h1 {
+            font-weight: bolder;
+            font-size: 30px;
+            text-align: center;
+        }
+        .grey {
+            font-weight: 600;
+            color: black;
+            text-align: center;
+            vertical-align: text-top;
+        }
+        .pp {
+            text-align: center;
+        }
+        .button_red {
+            margin-left: 50px;
+            margin-right: 50px;
+            text-align: center;
+            background-color: red;
+            border-radius: 5px;
+            height: 25px;
+            vertical-align: middle;
+            padding-top: 5px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="all">
+        {% for element in product_list %}
+        <div class="variant">
+            <h3>{{ element.name }}</h3>
+            <hr class="hr1">
+            <img src="data:images/png;base64,{{ element.image_base64 }}" height="200px" width="250px">
+            <p class="grey">Description:{{ element.description }}</p>
+            <p class="h1">{{ element.price }}$</p>
+            <p class="button_red">BUY</p>
+        </div>
         {% endfor %}
     </div>
 </body>
