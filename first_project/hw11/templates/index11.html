@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DRM</title>
+    <link rel="stylesheet" href="style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+    .text {
+        text-align: center;
+    }
+    header {
+      background-color: #000;
+      padding: 0px;
+      margin: -10px;
+      height: 100px;
+      width: 100%;
+    }
+    header img {
+        padding-left: 0px;
+        padding-top: 20px;
+        height: 70px;
+        width: 10%;
+        padding-bottom: 50px;
+    }
+    #nav_header {
+        position: relative;
+        display: block;
+        width: 70%;
+        height: 50px;
+        padding-left: 0px;
+        margin-left: 300px;
+        padding-top: 0px;
+    }
+    #nav_header ul{
+     position: relative;
+     display: block;
+     background-color: #000;
+     margin-top: -100px;
+     padding: 0px;
+     width: 40%;
+     height: 0px;
+     list-style: none;
+     padding-left: 0px;
+     padding-bottom: 50px;
+    }
+    .r {
+        transition: 0.8s;
+    }
+
+    .blok {
+      background: #000;
+      color: #FFF;
+      cursor: pointer;
+    }
+    .blok:hover {
+      background: #2b2b2b;
+      color: #000;
+      border-bottom: 3px solid red;
+    }
+    #nav_header > ul::after{
+     display: block;
+     width: 100%;
+     height: 0px;
+     clear: both;
+     content: " ";
+    }
+    #nav_header ul li{
+     position: relative;
+     display: block;
+     float: left;
+     width: 25%;
+     height: auto;
+     text-align: center;
+    }
+
+    #nav_header ul li a{
+     display: block;
+     padding: 9px 25px 0px 25px;
+     font-size: 14px;
+     line-height: 1.3em;
+     text-decoration: none;
+     font-weight: bold;
+     text-transform: uppercase;
+     height: 36px;
+      box-sizing: border-box;
+     color: white;
+    }
+    #nav_header ul li ul{
+     position: absolute;
+     top: 50px;
+     left: 0px;
+     display: none;
+     height: 40px;
+     width: 130px;
+     background-color: #2b2b2b;
+     border: 1px solid black;
+     margin-top: -10px;
+    }
+    #nav_header ul li:hover ul{
+     display: block;
+     background-color: lightgray;
+
+    }
+    #nav_header ul li ul li{
+     float: none;
+     height: 30px;
+     width: 130px;
+    }
+
+    #nav_header ul li ul li a{
+     display: block;
+     text-transform: none;
+     height: auto;
+     padding: 7px 25px;
+     width: 130px;
+     box-sizing: border-box;
+     border-top: 1px solid #ffffff;
+     color: white;
+    }
+    #nav_header ul li ul li:first-child a{
+     border-top: 0px;
+    }
+    body {
+        background-color: grey;
+    }
+    footer {
+        background-color: black;
+        color: white;
+        position: bottom;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+        .all {
+            display: flex;
+            margin: 30px;
+        }
+        .variant {
+            width: 250px;
+            height: parent;
+            border: 1px solid black;
+            box-shadow: 0px 6px 3px grey;
+            border-radius: 10px;
+            margin: 10px;
+            background-color: white;
+        }
+        .variant:hover {
+            transition: 1s;
+            transform: scale(1.15);
+        }
+        h3 {
+            text-align: center;
+        }
+        .hr1 {
+            border:  2px solid red;
+        }
+        .h1 {
+            font-weight: bolder;
+            font-size: 30px;
+            text-align: center;
+        }
+        .grey {
+            font-weight: 600;
+            color: black;
+            width: parent;
+            text-align: center;
+            vertical-align: text-top;
+        }
+        .pp {
+            text-align: center;
+        }
+        .button_red {
+            margin-left: 50px;
+            margin-right: 50px;
+            text-align: center;
+            background-color: red;
+            border-radius: 5px;
+            height: 25px;
+            vertical-align: middle;
+            padding-top: 5px;
+            color: white;
+        }
+        .all-checkbox-categories {
+            margin-top: 50px;
+            margin-left:20px;
+        }
+  </style>
+</head>
+<body>
+  <header>
+      <a href="http://127.0.0.1:8000/"><img src="https://st3.depositphotos.com/12659858/35956/v/600/depositphotos_359567112-stock-video-abstract-stylized-spinning-globe-planet.jpg" width="70px" height="100px" draggable="false" alt="Logo"></a>
+      <nav id="nav_header">
+         <ul>
+           <li class="r blok"><a href="#">Nothing</a></li>
+                 <li class="r blok"><a href="#">Nothing</a></li>
+                 <li class="r blok"><a href="#">Nothing</a></li>
+           <li class="r blok"><a href="#">Nothing</a>
+               <ul>
+                 <li class="under_menu"><a href="#">Nothing</a></li>
+                 <li class="under_menu"><a href="#">Nothing</a></li>
+                 <li class="under_menu"><a href="#">Nothing</a></li>
+                </ul>
+           </li>
+         </ul>
+      </nav>
+  </header>
+  <aside>
+      <div class="all-checkbox-categories">
+      <select onchange="location.href=this.value">
+          <option>Type of product</option>
+          <option value="http://127.0.0.1:8000/">All</option>
+          {% for element in categories_list %}
+          <option value="http://127.0.0.1:8000/{{ element.name }}">{{ element.name }}</option>
+          {% endfor %}
+      </select>
+      <!--<select onchange="location.href=this.value">
+          <option>Type of sorting</option>
+          <option value="http://127.0.0.1:8000/">All</option>
+          <option value="http://127.0.0.1:8000/from_cheapest">From Cheapest</option>
+          <div class="all">
+          {% for element in productses_list %}
+          <div class="variant">
+              <h3>{{ element.name }}</h3>
+              <hr class="hr1">
+              <img src="data:images/png;base64,{{ element.image_base64 }}" height="200px" width="250px">
+              <p class="grey">{{ element.description }}</p>
+              <p class="grey">{{ element.style }}</p>
+              <p class="h1">{{ element.price }}$</p>
+              <p class="button_red">BUY</p>
+          </div>
+          {% endfor %}
+          </div>
+          <option value="http://127.0.0.1:8000/from_expensive">From the most expensive</option>
+      </select>-->
+      </div>
+  </aside>
+      <div class="all">
+          {% for element in products_list %}
+          <div class="variant">
+              <h3>{{ element.name }}</h3>
+              <hr class="hr1">
+              <img src="data:images/png;base64,{{ element.image_base64 }}" height="200px" width="250px">
+              <p class="grey">{{ element.description }}</p>
+              <p class="grey">{{ element.style }}</p>
+              <p class="h1">{{ element.price }}$</p>
+              <p class="button_red">BUY</p>
+          </div>
+          {% endfor %}
+      </div>
+  <footer>
+            <div class="v123">
+              <div>
+                <div class="footer-columns">
+                  <div class="footer-column">
+                    <h3>About</h3>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </div>
+                  <div class="footer-column">
+                    <h3>Contact me</h3>
+                    <p>
+                      If you are interested in working with me or just want to say hello simply write on email.
+                      <br><strong>Email: <a href="#">contact@mail.com</a></strong>
+                    </p>
+                  </div>
+                </div>
+              </div>
+                <small>Copyright &copy; 2023</small>
+            </div>
+  </footer>
+</body>
+</html>
