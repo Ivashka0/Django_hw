@@ -4,6 +4,7 @@ from . import views
 
 urlpatterns = [
     path('', views.product),
-    path('<str:category>', views.products_filter),
-    #path('from_cheapest', views.sort_cheapest)
+    path('<str:category>/', views.products_filter),
+    path('sorting/cheap/', views.sort_cheapest),
+    path('sorting/expensive/', views.sort_expensive)
 ]

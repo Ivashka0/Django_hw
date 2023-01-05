@@ -215,25 +215,12 @@
           <option value="http://127.0.0.1:8000/{{ element.name }}">{{ element.name }}</option>
           {% endfor %}
       </select>
-      <!--<select onchange="location.href=this.value">
+      <select onchange="location.href=this.value">
           <option>Type of sorting</option>
           <option value="http://127.0.0.1:8000/">All</option>
-          <option value="http://127.0.0.1:8000/from_cheapest">From Cheapest</option>
-          <div class="all">
-          {% for element in productses_list %}
-          <div class="variant">
-              <h3>{{ element.name }}</h3>
-              <hr class="hr1">
-              <img src="data:images/png;base64,{{ element.image_base64 }}" height="200px" width="250px">
-              <p class="grey">{{ element.description }}</p>
-              <p class="grey">{{ element.style }}</p>
-              <p class="h1">{{ element.price }}$</p>
-              <p class="button_red">BUY</p>
-          </div>
-          {% endfor %}
-          </div>
-          <option value="http://127.0.0.1:8000/from_expensive">From the most expensive</option>
-      </select>-->
+          <option value="http://127.0.0.1:8000/sorting/cheap/">From cheapest</option>
+          <option value="http://127.0.0.1:8000/sorting/expensive/">From the most expensive</option>
+      </select>
       </div>
   </aside>
       <div class="all">

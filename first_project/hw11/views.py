@@ -48,7 +48,13 @@ def products_filter(request, category):
                   context={"products_list": context, "categories_list": categories})
 
 
-#def sort_cheapest(request):
-#    context = Product.objects.order_by("Product")
-#
-#    return render(template_name='index11.html', request=request, context={"productses_list": context})
+def sort_cheapest(request):
+    cheapest_products = Product.objects.all().order_by('price')
+
+    return render(template_name='index11.html', request=request, context={"products_list": cheapest_products})
+
+
+def sort_expensive(request):
+    expensive_products = Product.objects.all().order_by('-price')
+
+    return render(template_name='index11.html', request=request, context={"products_list": expensive_products})
