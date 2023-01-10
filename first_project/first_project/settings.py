@@ -51,7 +51,9 @@ INSTALLED_APPS = [
     'hw8_home',
     'hw9',
     'hw9_2',
-    'hw11'
+    'hw11',
+    'hw12',
+    'uploaderjson'
 ]
 
 MIDDLEWARE = [
