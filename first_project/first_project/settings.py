@@ -53,7 +53,8 @@ INSTALLED_APPS = [
     'hw9_2',
     'hw11',
     'hw12',
-    'uploaderjson'
+    'uploaderjson',
+    'telegram_bot_shop'
 ]
 
 MIDDLEWARE = [
